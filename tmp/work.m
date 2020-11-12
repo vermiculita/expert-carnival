@@ -52,3 +52,23 @@ figure(4)
 str_per_total = x(:,2)./(x(:,3)+x(:,5));
 plot(str_per_total(:),x(:,4)./x(:,5)-x(:,2)./x(:,3),'.')
 
+
+%%
+
+xr = dlmread('oakland-mi-subset.csv',',',1,0);
+xd = dlmread('oakland-mi-subset-d.csv',',',0,0);
+
+r_rate = (xr(:,2)+xr(:,4))./(xr(:,3)+xr(:,5));
+d_rate = (xd(:,2)+xd(:,4))./(xd(:,3)+xd(:,5));
+
+figure(1)
+plot(r_rate(:),[xr(:,2)./(xr(:,3)+xr(:,5)),xr(:,4)./(xr(:,3)+xr(:,5))],'.')
+figure(2)
+plot(d_rate(:),[xr(:,2)./(xr(:,3)+xr(:,5)),xr(:,4)./(xr(:,3)+xr(:,5))],'.')
+
+figure(3)
+plot(r_rate(:),[xd(:,2)./(xd(:,3)+xd(:,5)),xd(:,4)./(xd(:,3)+xd(:,5))],'.')
+figure(4)
+plot(d_rate(:),[xd(:,2)./(xd(:,3)+xd(:,5)),xd(:,4)./(xd(:,3)+xd(:,5))],'.')
+
+
