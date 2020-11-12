@@ -39,4 +39,16 @@ plot(r_rate(:),x(:,4)./x(:,5)-x(:,2)./x(:,3),'.')
 %
 
 figure(3)
-plot(r_rate(:),x(:,4)./(x(:,3)+x(:,5))-x(:,2)./(x(:,3)+x(:,5)),'.')
+plot(r_rate(:),x(:,2)./(x(:,3)+x(:,5))-x(:,4)./(x(:,3)+x(:,5)),'.')
+
+%
+% X = straight_r_votes / total_votes
+%
+% Y = (trump_votes_among_mixed_ballots / mixed_ballot_votes) - 
+%    (trump_votes_among_straight_r_ballots / straight_r_votes)
+%
+
+figure(4)
+str_per_total = x(:,2)./(x(:,3)+x(:,5));
+plot(str_per_total(:),x(:,4)./x(:,5)-x(:,2)./x(:,3),'.')
+
